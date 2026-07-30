@@ -301,6 +301,7 @@ define Trusted-Firmware-A/mt7987-emmc-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7987
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
 endef
 
 define Trusted-Firmware-A/mt7987-nor-comb
@@ -309,6 +310,7 @@ define Trusted-Firmware-A/mt7987-nor-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7987
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
 endef
 
 define Trusted-Firmware-A/mt7987-sdmmc-comb
@@ -317,6 +319,7 @@ define Trusted-Firmware-A/mt7987-sdmmc-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7987
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
 endef
 
 define Trusted-Firmware-A/mt7987-spim-nand0-ubi-comb
@@ -325,6 +328,7 @@ define Trusted-Firmware-A/mt7987-spim-nand0-ubi-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7987
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
   USE_UBI:=1
   SPIM_CTRL:=0
 endef
@@ -335,6 +339,7 @@ define Trusted-Firmware-A/mt7987-spim-nand2-ubi-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7987
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
   USE_UBI:=1
   SPIM_CTRL:=2
 endef
@@ -425,6 +430,7 @@ define Trusted-Firmware-A/mt7988-nor-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7988
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
 endef
 
 define Trusted-Firmware-A/mt7988-emmc-comb
@@ -433,6 +439,7 @@ define Trusted-Firmware-A/mt7988-emmc-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7988
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
 endef
 
 define Trusted-Firmware-A/mt7988-sdmmc-comb
@@ -441,6 +448,8 @@ define Trusted-Firmware-A/mt7988-sdmmc-comb
   BUILD_SUBTARGET:=filogic
   PLAT:=mt7988
   DRAM_USE_COMB:=1
+  DDR4_4BG_MODE:=1
+  DDR_TYPE:=ddr4
 endef
 
 define Trusted-Firmware-A/mt7988-snand-comb
@@ -552,6 +561,7 @@ TFA_MAKE_FLAGS += \
 	HAVE_DRAM_OBJ_FILE=yes \
 	$(if $(DDR3_FLYBY),DDR3_FLYBY=1) \
 	$(if $(DRAM_USE_COMB),DRAM_USE_COMB=1) \
+	$(if $(DDR4_4BG_MODE),DDR4_4BG_MODE=1) \
 	$(if $(USE_UBI),UBI=1 $(if $(findstring mt7622,$(PLAT)),OVERRIDE_UBI_START_ADDR=0x80000)) \
 	$(if $(USE_UBI),UBI=1 $(if $(findstring mt7981,$(PLAT)),OVERRIDE_UBI_START_ADDR=0x100000)) \
 	$(if $(USE_UBI),UBI=1 $(if $(findstring mt7986,$(PLAT)),OVERRIDE_UBI_START_ADDR=0x200000)) \
